@@ -1,3 +1,73 @@
+// Métodos de objetos nativos
+
+// Array
+
+var numbers = [];
+numbers.length; // 0
+
+// - push
+
+numbers.push(2);
+numbers.length; // 1
+
+numbers.push(4);
+numbers.length; // 2
+
+numbers.push(6);
+numbers.length; // 3
+
+numbers.push(8);
+numbers.length; // 4
+
+numbers.push(10);
+numbers.length; // 5
+
+// - pop
+
+numbers.pop(); // 10
+numbers.length; // 4
+
+// - slice
+
+numbers.slice(1, 3); // [4, 6]
+
+// - splice
+
+var numbers_copy = numbers.slice(0);
+numbers_copy.splice(2, 2); // [6, 8]
+numbers_copy; // [2, 4]
+
+numbers_copy = numbers.slice(0);
+numbers_copy.splice(2, 1, 22); // [6]
+numbers_copy; // [2, 4, 22, 8]
+
+// - indexOf
+
+numbers_copy.indexOf(22); //2
+
+// Object
+
+var user = {
+  id : 616,
+  email : 'mrsanchez@xenda.pe',
+  specialPowers : true
+};
+
+// - hasOwnProperty
+
+user.hasOwnProperty('email'); //true
+user.hasOwnProperty('firstName'); //false
+
+// - for in
+
+for (attribute in user) {
+  console.log(attribute + ' : ' + user[attribute]);
+}
+
+// id : 616
+// email : mrsanchez@xenda.pe
+// specialPowers : true
+
 // Funciones
 
 var markAsDone = function(task) {
@@ -17,7 +87,7 @@ var markAsDone = function() {
   var tasks = arguments,
   done_tasks = [], task;
 
-  for (i = 0; i < tasks.length; i++) {
+  for (var i = 0; i < tasks.length; i++) {
     task = tasks[i];
     task.status = 'done';
 
@@ -55,6 +125,26 @@ User.prototype.fullName = function() {
 
 var user = new User();
 user.fullName();
+
+// Extendiendo objetos
+
+Array.prototype.first = function() {
+  return this[0];
+}
+
+Array.prototype.last = function() {
+  if (this.length > 0) {
+    return this[this.length - 1];
+  }
+}
+
+// Extendiendo objetos CON PRECAUCIÓN
+
+if (Array.prototype.map == undefined) {
+  Array.prototype.map = function() {
+    return this;
+  }
+}
 
 // Patrones
 
@@ -181,3 +271,7 @@ user.setFirstName('Gustavo').setLastName('Leon').setNickname('hpneo').save();
 user.firstName; // "Gustavo"
 user.lastName; // "Leon"
 user.nickname; // "hpneo"
+
+// Continuaciones
+
+$.getJSON('', function() {});
