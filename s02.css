@@ -1,0 +1,148 @@
+/* Transiciones */
+
+body {
+  font-family: 'Open Sans';
+}
+
+nav {
+  margin: 10px 2px;
+}
+
+section div {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.start-transition, .start-transformation, .control-animation {
+  display: inline-block;
+  text-decoration: none;
+  background: black;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+#background {
+  display             : block;
+  width               : 100px;
+  height              : 100px;
+  border-radius       : 50px;
+  background-color    : red;
+
+  -webkit-transition-property : background-color;
+  -webkit-transition-duration : 4.0s;
+}
+
+#font-size {
+  display             : block;
+  font-size           : 36px;
+
+  -webkit-transition-property : font-size;
+  -webkit-transition-duration : 4.0s;
+}
+
+#text-indent {
+  display             : block;
+  font-size           : 36px;
+  text-indent         : 20px;
+
+  -webkit-transition-property : text-indent;
+  -webkit-transition-duration : 4.0s;
+}
+
+#width {
+  display             : block;
+  width               : 100px;
+  height              : 100px;
+  background-color    : green;
+
+  -webkit-transition-property : width;
+  -webkit-transition-duration : 4.0s;
+}
+
+/* Transiciones */
+
+#rotate {
+  display             : block;
+  width               : 100px;
+  height              : 100px;
+  background-color    : green;
+
+  -webkit-transition-property : -webkit-transform;
+  -webkit-transition-duration : 4.0s;
+}
+
+#translate {
+  display             : block;
+  width               : 100px;
+  height              : 100px;
+  background-color    : blue;
+
+  -webkit-transition-property : -webkit-transform;
+  -webkit-transition-duration : 4.0s;
+}
+
+#scale {
+  display             : block;
+  width               : 100px;
+  height              : 100px;
+  background-color    : yellow;
+
+  -webkit-transition-property : -webkit-transform;
+  -webkit-transition-duration : 4.0s;
+}
+
+#skewX {
+  display             : block;
+  width               : 100px;
+  height              : 100px;
+  background-color    : purple;
+
+  -webkit-transition-property : -webkit-transform;
+  -webkit-transition-duration : 4.0s;
+}
+
+/* Animaciones */
+
+#animation-1 {
+  display             : block;
+  width               : 100px;
+  height              : 100px;
+  background-color    : orange;
+  margin-left         : 0px;
+
+  -webkit-animation-name            : animation-frames;
+  -webkit-animation-duration        : 2s;
+  -webkit-animation-iteration-count : infinite;
+}
+
+@-webkit-keyframes animation-frames {
+  0% {
+    margin-left: 0px;
+  }
+
+  15% {
+    margin-left: 300px;
+  }
+
+  30% {
+    margin-left: 0px;
+  }
+
+  45% {
+    margin-left: 100px;
+  }
+
+  60% {
+    margin-left: 0px;
+  }
+
+  75% {
+    margin-left: 20px;
+  }
+
+  100% {
+    margin-left: 5px;
+  }
+}
