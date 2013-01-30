@@ -272,6 +272,8 @@ user.firstName; // "Gustavo"
 user.lastName; // "Leon"
 user.nickname; // "hpneo"
 
-// Continuaciones
+// Callbacks
 
-$.getJSON('', function() {});
+window.setTimeout(function(){
+  console.log('Hello Vietnam!');
+}, 1500);
