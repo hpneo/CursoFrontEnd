@@ -4,7 +4,7 @@ Desarrollo FrontEnd con JavaScript
 I. Introducción
 -------------
 * Sesión 01 - JavaScript, Patrones
-* Sesión 02 - CSS3 : Transiciones, Transformaciones, Animaciones
+* Sesión 02 - Testing con JavaScript, CSS3 : Transiciones, Transformaciones, Animaciones
 
 II. HTML5
 -------------
@@ -13,8 +13,8 @@ II. HTML5
 
 III. jQuery
 -------------
-* Sesión 05 - Promises y Deferred Object
-* Sesión 06 - Aplicaciones MVC, Servicios REST, JSON, Creación de aplicación MVC
+* Sesión 05 - Promises y Deferred Object, Aplicaciones MVC
+* Sesión 06 - Servicios REST y JSON, Creación de aplicación MVC
 
 III. Backbone.js
 -------------
