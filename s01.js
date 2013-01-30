@@ -187,7 +187,7 @@ var UserNotifier = function() {
   var channels = {};
 
   return {
-    publish : function(channel, args) {
+    publish : function(channel) {
       if (channels[channel] == undefined) {
         return false;
       }
@@ -196,8 +196,10 @@ var UserNotifier = function() {
       subscribers_length = subscribers.length,
       i;
 
+      var args = Array.prototype.slice.call(arguments, 1);
+
       for (i = 0; i < subscribers_length; i++) {
-        subscribers[i].func(channel, args);
+        subscribers[i].func.apply(null, args);
       }
 
       return this;
