@@ -178,6 +178,9 @@ var UserModule = (function() {
       for (var i = 0; i < users.length; i++) {
         callback(users[i]);
       }
+    },
+    count : function() {
+      return users.length;
     }
   };
 })();
@@ -265,9 +268,9 @@ User.prototype.save = function() {
 var user = new User({
   email : 'gustavo@xenda.pe'
 });
-user.firstName; // undefined
-user.lastName; // undefined
-user.nickname; // undefined
+user.firstName('Gustavo'); // undefined
+user.lastName('Leon'); // undefined
+user.nickname('hpneo'); // undefined
 
 user.setFirstName('Gustavo').setLastName('Leon').setNickname('hpneo').save();
 user.firstName; // "Gustavo"
