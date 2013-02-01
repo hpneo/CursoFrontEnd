@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transiciones, Transformaciones y Animaciones</title>
+  <meta charset="utf-8" />
+  <style type="text/css">
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #deer {
+      display: block;
+      width: 279px;
+      height: 456px;
+      background: url('http://thewebivore.com/demos/collie/deer-sprite.png') no-repeat left center;
+
+      -webkit-animation-name            : animation-frames;
+      -webkit-animation-duration        : 0.8s;
+      -webkit-animation-iteration-count : infinite;
+      -webkit-animation-timing-function : steps(7);
+
+      -moz-animation-name               : animation-frames;
+      -moz-animation-duration           : 0.8s;
+      -moz-animation-iteration-count    : infinite;
+      -moz-animation-timing-function    : steps(7);
+
+      -ms-animation-name                : animation-frames;
+      -ms-animation-duration            : 0.8s;
+      -ms-animation-iteration-count     : infinite;
+      -ms-animation-timing-function     : steps(7);
+
+      -o-animation-name                 : animation-frames;
+      -o-animation-duration             : 0.8s;
+      -o-animation-iteration-count      : infinite;
+      -o-animation-timing-function      : steps(7);
+    }
+
+    @-webkit-keyframes animation-frames {
+      from {
+        background-position: 0px 0px;
+      }
+
+      to {
+        background-position: -1956px 0px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="deer"></div>
+</body>
+</html>

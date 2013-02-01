@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transiciones, Transformaciones y Animaciones</title>
+  <meta charset="utf-8" />
+  <style type="text/css">
+    body {
+      margin: 0;
+      background: #1a211c;
+      overflow: hidden;
+    }
+
+    #square {
+      display: block;
+      width: 300px;
+      height: 300px;
+      border: solid 10px #34458d;
+      background: #1e2851;
+      margin: 20px 15px;
+      float: left;
+
+      -webkit-animation-name            : animation-frames;
+      -webkit-animation-duration        : 4.5s;
+      -webkit-animation-delay           : 0.5s;
+      -webkit-animation-iteration-count : infinite;
+
+      -moz-animation-name               : animation-frames;
+      -moz-animation-duration           : 4.5s;
+      -moz-animation-delay              : 0.5s;
+      -moz-animation-iteration-count    : infinite;
+
+      -ms-animation-name                : animation-frames;
+      -ms-animation-duration            : 4.5s;
+      -ms-animation-delay               : 0.5s;
+      -ms-animation-iteration-count     : infinite;
+
+      -o-animation-name                 : animation-frames;
+      -o-animation-duration             : 4.5s;
+      -o-animation-delay                : 0.5s;
+      -o-animation-iteration-count      : infinite;
+    }
+
+    @-webkit-keyframes animation-frames {
+      0% {
+        background: #1e2851;
+        border-color: #34458d;
+      }
+
+      33% {
+        background: #1d3b16;
+        border-color: #468d34;
+      }
+
+      66% {
+        background: #530d15;
+        border-color: #aa1b2c;
+      }
+
+      100% {
+        background: #1e2851;
+        border-color: #34458d;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="square"></div>
+</body>
+</html>
