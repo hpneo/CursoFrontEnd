@@ -23,10 +23,10 @@
       -webkit-transition-duration : 5.0s;
       -moz-transition-property    : -webkit-transform;
       -moz-transition-duration    : 5.0s;
-      -ms-transition-property     : -webkit-transform;
-      -ms-transition-duration     : 5.0s;
       -o-transition-property      : -webkit-transform;
       -o-transition-duration      : 5.0s;
+      transition-property         : -webkit-transform;
+      transition-duration         : 5.0s;
     }
 
     #square._30deg {
@@ -34,12 +34,13 @@
        border-color: #468d34;
 
        -webkit-transform          : rotate(30deg);
-       -moz-transform-origin      : 0% 100%;
-       -ms-transform-origin       : 0% 100%;
-       -o-transform-origin        : 0% 100%;
+       -webkit-transform-origin   : 0% 100%;
        -moz-transform             : rotate(30deg);
-       -ms-transform              : rotate(30deg);
+       -moz-transform-origin      : 0% 100%;
        -o-transform               : rotate(30deg);
+       -o-transform-origin        : 0% 100%;
+       transform                  : rotate(30deg);
+       transform-origin           : 0% 100%;
     }
 
     #square._80deg {
@@ -48,12 +49,12 @@
 
        -webkit-transform          : rotate(80deg);
        -webkit-transform-origin   : 70% 70%;
-       -moz-transform-origin      : 70% 70%;
-       -ms-transform-origin       : 70% 70%;
-       -o-transform-origin        : 70% 70%;
        -moz-transform             : rotate(80deg);
-       -ms-transform              : rotate(80deg);
+       -moz-transform-origin      : 70% 70%;
        -o-transform               : rotate(80deg);
+       -o-transform-origin        : 70% 70%;
+       transform                  : rotate(80deg);
+       transform-origin           : 70% 70%;
     }
   </style>
 </head>
