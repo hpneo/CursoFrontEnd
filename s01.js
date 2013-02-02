@@ -10,11 +10,17 @@ numbers.length; // 0
 numbers.push(2);
 numbers.length; // 1
 
+numbers; // [2];
+
 numbers.push(4);
 numbers.length; // 2
 
+numbers; // [2, 4];
+
 numbers.push(6);
 numbers.length; // 3
+
+numbers; // [2, 4, 6];
 
 numbers.push(8);
 numbers.length; // 4
@@ -29,6 +35,8 @@ numbers.length; // 4
 
 // - slice
 
+[2, 4, 6, 8];
+
 numbers.slice(1, 3); // [4, 6]
 
 // - splice
@@ -36,6 +44,8 @@ numbers.slice(1, 3); // [4, 6]
 var numbers_copy = numbers.slice(0);
 numbers_copy.splice(2, 2); // [6, 8]
 numbers_copy; // [2, 4]
+
+[2, 4, 22, 8];
 
 numbers_copy = numbers.slice(0);
 numbers_copy.splice(2, 1, 22); // [6]
@@ -64,6 +74,12 @@ for (attribute in user) {
   console.log(attribute + ' : ' + user[attribute]);
 }
 
+user.email
+
+var email_key = 'email';
+
+user[email_key];
+
 // id : 616
 // email : mrsanchez@xenda.pe
 // specialPowers : true
@@ -83,6 +99,12 @@ var markAsDone = function(task1, task2) {
   return [task1, task2];
 }
 
+
+var func3 = function(a, b, c) {};
+
+func3(1, 2);
+func3(1, 2, 3, 5);
+
 var markAsDone = function() {
   var tasks = arguments,
   done_tasks = [], task;
@@ -96,6 +118,24 @@ var markAsDone = function() {
 
   return done_tasks;
 };
+
+var array = [2, 4, 7, 8];
+
+for(var i = 0; i < array.length; i++) {
+  console.log(array[i]);
+}
+
+for(i in array) {
+  console.log(array[i]);
+}
+
+var obj = {
+  id : 1,
+  email : 'gustavo@xenda.pe',
+  nombre : 'Gustavo',
+  apellido : 'Leon'
+};
+
 
 // Objetos
 
@@ -162,6 +202,12 @@ var new_user = new User({
   firstName : 'Gustavo',
   lastName : 'Leon'
 });
+
+var users = [];
+
+function add_user(user){
+  users.push(user);
+}
 
 // Module
 var UserModule = (function() {
@@ -239,6 +285,8 @@ var UserNotifier = function() {
 
 // Method chaining
 
+$('#bloque-1').hide().fadeIn('slow').animate({});
+
 function User(attributes) {
   this.email = attributes.email;
   this.nickname = attributes.nickname;
@@ -282,3 +330,7 @@ user.nickname; // "hpneo"
 window.setTimeout(function(){
   console.log('Hello Vietnam!');
 }, 1500);
+
+$.getJSON('/users.json', function(users) {
+  console.log(users.length);
+});

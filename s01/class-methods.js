@@ -11,7 +11,10 @@ var User = (function() {
       this[i] = attributes[i];
     }
 
-    // El valor de users_count es el mismo para cada instancia de User y para User mismo
+    /* El valor de users_count es el mismo:
+        - para cada instancia de User
+        - para User mismo
+    */
     console.log(users_count);
   };
 

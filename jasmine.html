@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>gmaps.js test</title>
+  <title>Jasmine test</title>
+  <meta charset="utf-8" />
   <link rel="stylesheet" type="text/css" href="lib/jasmine/jasmine.css" />
   <style type="text/css">
     body {
@@ -10,7 +11,29 @@
   </style>
   <script type="text/javascript" src="lib/jasmine/jasmine.js"></script>
   <script type="text/javascript" src="lib/jasmine/jasmine-html.js"></script>
+  <script type="text/javascript">
+    window.UserModule = (function() {
+      var users = [];
 
+      return {
+        add : function(user) {
+          users.push(user);
+        },
+        remove : function(user) {
+          users.splice(users.indexOf(user), 1);
+        },
+        each : function(callback) {
+          for (var i = 0; i < users.length; i++) {
+            callback(users[i]);
+          }
+        },
+        count : function() {
+          return users.length;
+        }
+      };
+    })();
+  </script>
+  <script type="text/javascript" src="moduloSpec.js"></script>
   <script type="text/javascript">
     (function() {
       var jasmineEnv = jasmine.getEnv();
