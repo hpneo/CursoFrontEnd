@@ -1,0 +1,10 @@
+CACHE MANIFEST
+NETWORK:
+/remote_storage.js
+FALLBACK:
+/remote_info /offline.html
+CACHE:
+/styles.css
+/logo.png
+/local_storage.js
+/storage_manager.js
