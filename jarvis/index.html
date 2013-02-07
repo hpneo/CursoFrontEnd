@@ -7,6 +7,15 @@
   <link rel="stylesheet" type="text/css" href="styles/layout.css" />
   <script type="text/javascript" src="app/lib/pepper.js"></script>
   <script type="text/javascript" src="app/application.js"></script>
+  <script type="text/javascript">
+    function addAvenger(avenger) {
+      var storage = window.localStorage;
+
+      if (storage['avengers']) {
+        storage['avengers'] = storage['avengers'] + ',' + avenger;
+      }
+    }
+  </script>
 </head>
 <body>
   <header>
