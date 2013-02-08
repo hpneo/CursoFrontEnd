@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>window.history</title>
+  <script type="text/javascript">
+    window.onhashchange = function(e) {
+      console.log(location.hash);
+    };
+    window.onpopstate = function(e) {
+      console.log(e.state);
+    };
+  </script>
+</head>
+<body>
+
+</body>
+</html>
