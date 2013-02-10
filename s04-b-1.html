@@ -5,19 +5,24 @@
   <script type="text/javascript">
     window.onload = function() {
       var photos = document.getElementById('photos');
-      var thumbs = document.getElementById('thumbs');
+      var files_list = document.getElementById('files');
+
       photos.addEventListener('change', function(e) {
         var files = e.target.files;
 
         for(var i = 0; i < files.length; i++) {
-          var file = files[i];
-          console.log('Reading file : ' + file.name);
-
           var reader = new FileReader();
+          var file = files[i];
+
+          reader.onprogress = function(e) {
+            console.log('Cargando ' + e.loaded + ' / ' + e.total + ' bytes');
+          }
 
           reader.onload = (function(file) {
-            return function(evt) {
-              thumbs.innerHTML += '<li><img src="' + evt.target.result + '" title="' + file.name + '" height="100" /></li>';
+            return function(e) {
+              console.log(e.target);
+              var img = '<img src="' + e.target.result + '" width="100" />';
+            files_list.innerHTML += '<li>' + img + file.name + '</li>';
             }
           })(file);
 
@@ -29,6 +34,7 @@
 </head>
 <body>
   <input type="file" multiple="multiple" id="photos" />
-  <ul id="thumbs"></ul>
+  
+  <ul id="files"></ul>
 </body>
 </html>

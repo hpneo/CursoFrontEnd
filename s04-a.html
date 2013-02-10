@@ -3,15 +3,67 @@
 <head>
   <title>window.history</title>
   <script type="text/javascript">
-    window.onhashchange = function(e) {
-      console.log(location.hash);
-    };
-    window.onpopstate = function(e) {
-      console.log(e.state);
-    };
+    var current_hash = "";
+
+    function checkUrl() {
+      if (current_hash == location.hash) {
+        return false;
+      }
+
+      var id = location.hash.replace('#', '');
+
+      console.log(id);
+
+      var section = document.getElementById('section-' + id);
+
+      console.log(section);
+
+      var sections = document.getElementsByClassName('section');
+
+      for (var i = 0; i < sections.length; i++) {
+        sections[i].style.display = 'none';
+        console.log(sections[i]);
+      }
+
+      section.style.display = 'block';
+      current_hash = location.hash;
+    }
+    // window.onhashchange = function(e) {
+    //   console.log(location.hash);
+    //   checkUrl();
+    // };
+    // window.onpopstate = function(e) {
+    //   checkUrl();
+    // };
+
+    window.setInterval(checkUrl, 100);
+  </script>
+  <style type="text/css">
+    body {
+      font-family: sans-serif;
+      font-size: 2em;
+    }
+    .section.hide {
+      display: none;
+    }
+  </style>
+  <script type="text/javascript">
+
   </script>
 </head>
 <body>
+  <a href="#about-us">Acerca de </a>
+  <a href="#contact-us">Contacto</a>
+  <a href="#products">Productos</a>
 
+  <div class="section hide" id="section-about-us">
+    <h1>Acerca de </h1>
+  </div>
+  <div class="section hide" id="section-contact-us">
+    <h1>Contacto</h1>
+  </div>
+  <div class="section hide" id="section-products">
+    <h1>Productos</h1>
+  </div>
 </body>
 </html>

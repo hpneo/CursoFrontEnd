@@ -2,23 +2,11 @@
 <html>
 <head>
   <title>Websockets</title>
+  <script type="text/javascript" src="pusher.js"></script>
   <script type="text/javascript">
     var connection;
     window.onload = function() {
-      connection = new WebSocket('ws://192.168.1.104:1234/channel-1/event');
-
-      connection.onopen = function() {
-        console.log("connected...");
-      };
-
-      connection.onclose = function() {
-        console.log("socket closed");
-      };
-
-      connection.onmessage = function(evt) {
-        message = JSON.parse(evt.data);
-        console.log('New message received: ', message);
-      };
+      connection = Pusher.subscribe('canal_b');
     };
   </script>
 </head>
