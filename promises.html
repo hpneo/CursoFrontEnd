@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Promises</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    var success_promise = $.ajax({
+      url : 'response.json'
+    });
+
+    var failed_promise = $.ajax({
+      url : 'respons.json'
+    });
+
+    success_promise.done(function(data, status) {
+      console.log(status, data);
+    });
+
+    failed_promise.fail(function(xhr, status, message) {
+      console.log(status, message);
+    });
+
+    var deferred = new $.Deferred();
+  var promise = deferred.promise();
+
+  promise.done(function(message) {
+    console.log(message);
+  });
+
+  deferred.resolve('Deferred succeeded');
+  </script>
+</head>
+<body>
+
+</body>
+</html>
