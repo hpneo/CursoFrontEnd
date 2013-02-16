@@ -8,11 +8,27 @@
   <script type="text/javascript" src="app/lib/pepper.js"></script>
   <script type="text/javascript" src="app/application.js"></script>
   <script type="text/javascript">
-    function addAvenger(avenger) {
-      var storage = window.localStorage;
+    window.onload = function() {
+      var avengers = Jarvis.avengers.list();
 
-      if (storage['avengers']) {
-        storage['avengers'] = storage['avengers'] + ',' + avenger;
+      var avengers_list = Pepper.find('avengers-list');
+
+      for(var i = 0; i < avengers.length; i++) {
+        var avenger = avengers[i];
+
+        var avenger_id = avenger.toLowerCase().replace(' ', '-');
+
+        var avenger_link = '<a href="#!/avengers/' + avenger_id + '">' + avenger +'</a>';
+
+        var avenger_item = Pepper.create('li', avenger_link, {
+          id : avenger_id
+        });
+
+        avengers_list.appendChild(avenger_item);
+      }
+
+      window.onpopstate = function() {
+        console.log(Jarvis.route(location.hash));
       }
     }
   </script>
