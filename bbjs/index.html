@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Backbone App</title>
+  <link rel="stylesheet" type="text/css" href="layout.css" />
   <script type="text/javascript" src="json2.js"></script>
   <script type="text/javascript" src="underscore.js"></script>
   <script type="text/javascript" src="jquery.js"></script>
@@ -17,8 +18,36 @@
   </script>
 </head>
 <body>
-  <h1>Jarvis</h1>
+  <header>
+    <h1>
+      <a href="index.html">Jarvis</a>
+    </h1>
+  </header>
 
-  <div id="wrapper"></div>
+  <aside class="left">
+    <div class="block">
+      <h3>Avengers</h3>
+      <ul class="list" id="avengers-list"></ul>
+    </div>
+    <div class="block">
+      <h3>Equipos</h3>
+      <ul class="list" id="teams-list"></ul>
+    </div>
+  </aside>
+  
+  <section class="left">
+    <h2 id="title"></h2>
+    <div id="wrapper"></div>
+  </section>
+
+  <script type="text/html" id="avengers-list-template">
+    {{#avengers}}
+    <li><a href="{{link}}">{{name}}</a></li>
+    {{/avengers}}
+  </script>
+  <script type="text/html" id="avengers-detail-template">
+    <h3>{{name}}</h3>
+    <p>{{description}}</p>
+  </script>
 </body>
 </html>
