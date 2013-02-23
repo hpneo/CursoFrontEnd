@@ -7,8 +7,19 @@ App.views.AvengersIndex = Backbone.View.extend({
   },
 
   addAvenger : function(e) {
-    console.log('addAvenger');
-    
+    var name = prompt('Nombre de Avenger:');
+
+    if (name) {
+      if (window.localStorage['avengers']) {
+        window.localStorage['avengers'] += ',' + name;
+      }
+      else {
+        window.localStorage['avengers'] = name;
+      }
+    }
+
+    this.render();
+
     return false;
   },
 
@@ -26,7 +37,7 @@ App.views.AvengersIndex = Backbone.View.extend({
     */
     var template = $('#avengers-list-template').text();
 
-    var output = Mustache.render(template, App.data);
+    var output = Mustache.render(template, { avengers : App.data.avengers() });
 
     this.el.innerHTML = output;
 

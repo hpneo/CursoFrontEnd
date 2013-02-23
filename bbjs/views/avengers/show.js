@@ -3,7 +3,7 @@ App.views.AvengersShow = Backbone.View.extend({
   className   : 'avengers-show',
   id          : function() {
     if (this.model) {
-      return this.model.name.toLowerCase().replace(' ', '-');
+      return this.model.id;
     }
   },
 

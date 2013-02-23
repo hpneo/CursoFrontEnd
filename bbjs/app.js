@@ -3,7 +3,7 @@ var App = {
   views : {},
   templates : {},
   data : {
-    avengers : (function(){
+    avengers : function(){
       var avengers = window.localStorage['avengers'].split(',');
 
       var list = [];
@@ -20,7 +20,7 @@ var App = {
 
       return list;
 
-    })()
+    }
   },
   init : function() {
     for (r in this.routers) {
@@ -34,6 +34,7 @@ var App = {
 
 App.routers.Avengers = Backbone.Router.extend({
   routes : {
+    ''             : 'index',
     'avengers'     : 'index',
     'avengers/:id' : 'show'
   },
@@ -53,9 +54,11 @@ App.routers.Avengers = Backbone.Router.extend({
 
     var avenger = null;
 
-    for(a in App.data.avengers) {
-      if (App.data.avengers[a]['id'] == id) {
-        avenger = App.data.avengers[a];
+    var avengers = App.data.avengers();
+
+    for(a in avengers) {
+      if (avengers[a]['id'] == id) {
+        avenger = avengers[a];
         break;
       }
     }
