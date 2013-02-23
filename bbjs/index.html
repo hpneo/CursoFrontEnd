@@ -43,9 +43,12 @@
   </section>
 
   <script type="text/html" id="avengers-list-template">
-    {{#avengers}}
-    <li><a href="{{link}}">{{name}}</a></li>
-    {{/avengers}}
+    <a href="#" class="button" id="new-avenger">Nuevo Avenger</a>
+    <ul class="common-list" id="avengers-list">
+      {{#avengers}}
+      <li><a href="{{link}}">{{name}}</a></li>
+      {{/avengers}}
+    </ul>
   </script>
   <script type="text/html" id="avengers-detail-template">
     <h3>{{name}}</h3>

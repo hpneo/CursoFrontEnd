@@ -1,6 +1,6 @@
 App.views.AvengersShow = Backbone.View.extend({
   tagName     : 'div',
-  className   : 'avengers-detail',
+  className   : 'avengers-show',
   id          : function() {
     if (this.model) {
       return this.model.name.toLowerCase().replace(' ', '-');

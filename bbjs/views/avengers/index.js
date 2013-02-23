@@ -1,7 +1,16 @@
 App.views.AvengersIndex = Backbone.View.extend({
-  tagName     : 'ul',
-  id          : 'avengers-list',
-  className   : 'common-list',
+  tagName     : 'div',
+  className   : 'avengers-index',
+
+  events : {
+    'click #new-avenger' : 'addAvenger'
+  },
+
+  addAvenger : function(e) {
+    console.log('addAvenger');
+    
+    return false;
+  },
 
   render : function() {
     /*
