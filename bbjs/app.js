@@ -1,6 +1,8 @@
 var App = {
   routers : {},
   views : {},
+  models : {},
+  collections : {},
   templates : {},
   data : {
     avengers : function(){
@@ -31,6 +33,22 @@ var App = {
     Backbone.history.start();
   }
 };
+
+App.models.Avenger = Backbone.Model.extend({
+  defaults : {
+    'status' : 'active'
+  },
+  validate : function(attrs) {
+    if (attrs.id <= 0) {
+      return 'Id no puede ser menor o igual a 0';
+    }
+  }
+});
+
+App.collections.Avengers = Backbone.Collection.extend({
+  model : App.models.Avenger,
+  url : 'users'
+});
 
 App.routers.Avengers = Backbone.Router.extend({
   routes : {
